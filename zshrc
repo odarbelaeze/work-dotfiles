@@ -83,6 +83,7 @@ alias why="stty -ixon -ixoff"
 
 if [[ -d .tmuxifier ]]; then
     export PATH="$HOME/.tmuxifier/bin:$PATH"
+    export TMUXIFIER_LAYOUT_PATH="$HOME/.tmuxifier-layouts"
     eval "$(tmuxifier init -)"
 fi
 
