@@ -17,8 +17,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
-Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
@@ -26,27 +26,36 @@ Plugin 'tommcdo/vim-exchange'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-scripts/django.vim'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'wikitopian/hardmode'
 
 call vundle#end()
 
 " Settings
 
+syntax enable
 filetype plugin indent on
-syntax on
-set nonumber
+set relativenumber
 set hlsearch
 
 " Plugin config
 
 set tags=./tags;$HOME
 
-" vim airline
+" - airline
 set t_Co=256
 let g:airline_theme='simple'
 let g:airline_right_sep=''
 let g:airline_left_sep=''
 set fillchars+=vert:\ 
+
+" - hard mode (cuz I want to stop being weak)
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+" - moustache
+
+let g:mustache_abbreviations = 1
 
 " - python-mode
 set completeopt=menu
@@ -75,6 +84,7 @@ nnoremap <leader>w :w <CR>
 nnoremap <leader>x :x <CR>
 nnoremap <leader>nh :nohlsearch <CR>
 nnoremap <leader>nu :set invnumber <CR>
+nnoremap Y y$
 
 inoremap jj <ESC>
 inoremap kk <ESC>
@@ -84,13 +94,6 @@ nnoremap <leader>ft :! python -m behave <CR>
 
 nnoremap <leader>ev :e ~/.vimrc <CR>
 nnoremap <leader>sv :so ~/.vimrc <CR>
-
-" Settings
-
-filetype plugin indent on
-syntax on
-set number
-set hlsearch
 
 " Indent settings
 
@@ -102,6 +105,7 @@ set softtabstop=4
 " Wild stuff
 set suffixes+=.a,.o,.pyc
 set wildignore+=*.o,*.so
+set wildignore+=*/bower_components/*,*/node_modules/*,*/dist/*,*/.tmp*,*/tmp*
 
 " Statusline
 set laststatus=2
