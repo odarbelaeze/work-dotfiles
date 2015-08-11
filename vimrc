@@ -123,3 +123,4 @@ endif
 nnoremap <leader>vr :VimuxRunCommand("
 nnoremap <leader>vl :VimuxRunLastCommand<CR>
 nnoremap <leader>vi :VimuxInspectRunner<CR>
+nnoremap <leader>vc :VimuxCloseRunner<CR>

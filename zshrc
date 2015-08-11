@@ -110,6 +110,9 @@ if [[ -d /opt/cuda/lib64 ]]; then
     export LD_LIBARY_PATH="/opt/cuda/lib64:$LD_LIBARY_PATH"
 fi
 
+# 256 color support
+export TERM=xterm-256color
+
 if [[ -d ~/Projects/dircolors-solarized ]]; then
     eval `dircolors ~/Projects/dircolors-solarized/dircolors.ansi-universal`
 fi
