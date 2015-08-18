@@ -14,21 +14,17 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'honza/vim-snippets'
-Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
 Plugin 'mattn/emmet-vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tommcdo/vim-exchange'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/django.vim'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'wikitopian/hardmode'
 
 call vundle#end()
 
@@ -50,9 +46,6 @@ let g:airline_right_sep=''
 let g:airline_left_sep=''
 set fillchars+=vert:\ 
 
-" - hard mode (cuz I want to stop being weak)
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-
 " - moustache
 
 let g:mustache_abbreviations = 1
@@ -65,7 +58,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'passive_filetypes': ['cuda'] }
+let g:syntastic_mode_map = { 'passive_filetypes': ['cuda', 'python'] }
 let g:syntastic_cpp_include_dirs=['include', 'hdr', 'inc', '../include', '../hdr', '../inc', '/opt/cuda/include']
 let g:syntastic_cpp_compiler_options='-std=c++11'
 let g:syntastic_c_include_dirs=['include', 'hdr', 'inc', '../include', '../hdr', '../inc', '/opt/cuda/include']
@@ -105,12 +98,10 @@ set softtabstop=4
 " Wild stuff
 set suffixes+=.a,.o,.pyc
 set wildignore+=*.o,*.so
-set wildignore+=*/bower_components/*,*/node_modules/*,*/dist/*,*/.tmp*,*/tmp*
+set wildignore+=*/bower_components/*,*/node_modules/*,*/dist/*,*/.tmp*,*/tmp*,*/build/*
 
 " Statusline
 set laststatus=2
-" set statusline+=%<%f\ %{fugitive#statusline()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-" set highlight=sb
 
 " Extra per project configuration
 if $PWD != $HOME
