@@ -21,6 +21,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tommcdo/vim-exchange'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/django.vim'
@@ -41,7 +42,7 @@ set tags=./tags;$HOME
 
 " - airline
 set t_Co=256
-let g:airline_theme='simple'
+let g:airline_theme='raven'
 let g:airline_right_sep=''
 let g:airline_left_sep=''
 set fillchars+=vert:\ 
@@ -77,6 +78,7 @@ nnoremap <leader>w :w <CR>
 nnoremap <leader>x :x <CR>
 nnoremap <leader>nh :nohlsearch <CR>
 nnoremap <leader>nu :set invnumber <CR>
+nnoremap <leader>nt :NERDTreeToggle <CR>
 nnoremap Y y$
 
 inoremap jj <ESC>
