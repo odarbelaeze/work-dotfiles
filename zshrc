@@ -92,6 +92,10 @@ if [[ -d $HOME/.z/ ]]; then
     source $HOME/.z/z.sh
 fi
 
+# Virtual env config
+
+export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python"
+
 if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
     source /usr/bin/virtualenvwrapper.sh
 fi
@@ -100,11 +104,7 @@ if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-if [[ -n "$VIRTUAL_ENV" ]]; then
-    . $VIRTUAL_ENV/bin/preactivate
-    . $VIRTUAL_ENV/bin/activate
-    . $VIRTUAL_ENV/bin/postactivate
-fi
+# Cuda
 
 if [[ -d /opt/cuda/lib64 ]]; then
     export LD_LIBARY_PATH="/opt/cuda/lib64:$LD_LIBARY_PATH"
@@ -117,3 +117,14 @@ if [[ -d ~/Projects/dircolors-solarized ]]; then
     eval `dircolors ~/Projects/dircolors-solarized/dircolors.ansi-universal`
 fi
 
+# Optional npm site
+
+if [[ -d ~/.node_modules/bin ]]; then
+    export PATH="$HOME/.node_modules/bin:$PATH"
+fi
+
+# Optional ruby gem directory
+
+if [[ -d ~/.gem/ruby/2.2.0/bin ]]; then
+    export PATH="$HOME/.gem/ruby/2.2.0/bin:$PATH"
+fi

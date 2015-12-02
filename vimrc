@@ -8,9 +8,11 @@ if v:version >= 704
     Plugin 'SirVer/ultisnips'
 endif
 
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'benmills/vimux'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'cespare/vim-toml'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'honza/vim-snippets'
@@ -18,6 +20,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
 Plugin 'mattn/emmet-vim'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tommcdo/vim-exchange'
@@ -33,6 +36,8 @@ call vundle#end()
 
 syntax enable
 filetype plugin indent on
+set background=dark
+colorscheme solarized
 set relativenumber
 set hlsearch
 
@@ -68,7 +73,9 @@ let g:syntastic_c_include_dirs=['include', 'hdr', 'inc', '../include', '../hdr',
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
-let g:UltiSnipsSnippetsDir='~/.vim/snipps'
+" I need to configure this better so that it does not collide with
+" vim-snippets
+" let g:UltiSnipsSnippetsDir='~/.vim/snipps'
 
 " Mappgings
 
@@ -89,6 +96,9 @@ nnoremap <leader>ft :! python -m behave <CR>
 
 nnoremap <leader>ev :e ~/.vimrc <CR>
 nnoremap <leader>sv :so ~/.vimrc <CR>
+
+" Ember specific mappings
+cnoreabbrev eg !ember g
 
 " Indent settings
 
