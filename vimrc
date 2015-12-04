@@ -14,12 +14,14 @@ Plugin 'benmills/vimux'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'cespare/vim-toml'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'edkolev/tmuxline.vim'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
 Plugin 'mattn/emmet-vim'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'racer-rust/vim-racer'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -36,7 +38,7 @@ call vundle#end()
 
 syntax enable
 filetype plugin indent on
-set background=dark
+set background=light
 colorscheme solarized
 set relativenumber
 set hlsearch
@@ -47,7 +49,7 @@ set tags=./tags;$HOME
 
 " - airline
 set t_Co=256
-let g:airline_theme='raven'
+let g:airline_theme='sol'
 let g:airline_right_sep=''
 let g:airline_left_sep=''
 set fillchars+=vert:\ 

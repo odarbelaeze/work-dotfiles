@@ -128,3 +128,10 @@ fi
 if [[ -d ~/.gem/ruby/2.2.0/bin ]]; then
     export PATH="$HOME/.gem/ruby/2.2.0/bin:$PATH"
 fi
+
+# Optional ruby gem directory
+
+if [[ -d ~/.cargo/bin ]]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+    export RUST_SRC_PATH="$HOME/.rust/source/rust"
+fi
