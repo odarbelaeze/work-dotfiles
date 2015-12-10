@@ -21,7 +21,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
 Plugin 'mattn/emmet-vim'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'racer-rust/vim-racer'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -38,8 +37,12 @@ call vundle#end()
 
 syntax enable
 filetype plugin indent on
-set background=light
+set background=dark
 colorscheme solarized
+
+" Numbers
+
+set number
 set relativenumber
 set hlsearch
 
