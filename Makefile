@@ -1,4 +1,4 @@
-install: git tmuxifier vim z zsh
+install: git tmuxifier vim z zsh nvim
 	@echo 'Run :PluginInstall in vim to complete :D'
 .PHONY:install
 
@@ -31,3 +31,9 @@ zsh:
 	rm -f ~/.zshrc
 	ln -s `pwd`/zshrc ~/.zshrc
 .PHONY:zsh
+
+nvim:
+	mkdir -p ~/.config
+	ln -s ~/.vim ~/nvim
+	ln -s ~/.vimrc ~/nvim/init.vim
+.PHONY:nvim
