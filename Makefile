@@ -34,6 +34,6 @@ zsh:
 
 nvim:
 	mkdir -p ~/.config
-	ln -s ~/.vim ~/nvim
-	ln -s ~/.vimrc ~/nvim/init.vim
+	ln -s ~/.vim ~/.config/nvim
+	ln -s ~/.vimrc ~/.config/nvim/init.vim
 .PHONY:nvim
