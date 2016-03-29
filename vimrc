@@ -55,9 +55,9 @@ let g:airline_right_sep=''
 let g:airline_left_sep=''
 set fillchars+=vert:\ 
 
-" - moustache
+" - Tmuxline
 
-let g:mustache_abbreviations = 1
+let g:tmuxline_powerline_separators = 0
 
 " - python-mode
 set completeopt=menu
@@ -124,9 +124,3 @@ if $PWD != $HOME
         source .vimrc
     endif
 endif
-
-" Vimux
-nnoremap <leader>vr :VimuxRunCommand("
-nnoremap <leader>vl :VimuxRunLastCommand<CR>
-nnoremap <leader>vi :VimuxInspectRunner<CR>
-nnoremap <leader>vc :VimuxCloseRunner<CR>
