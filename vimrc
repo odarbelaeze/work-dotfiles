@@ -49,7 +49,8 @@ set tags=./tags;$HOME
 
 " - airline
 set t_Co=256
-let g:airline_theme='serene'
+" Favorites: distinguished, ladreon, ubaryd
+let g:airline_theme='distinguished'
 let g:airline_right_sep=''
 let g:airline_left_sep=''
 set fillchars+=vert:\ 
