@@ -1,45 +1,41 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 
 if v:version >= 704
-    Plugin 'SirVer/ultisnips'
+    Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 endif
 
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
-Plugin 'benmills/vimux'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'cespare/vim-toml'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'edkolev/tmuxline.vim'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'honza/vim-snippets'
-Plugin 'kien/ctrlp.vim'
-Plugin 'klen/python-mode'
-Plugin 'mattn/emmet-vim'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'lepture/vim-jinja'
-Plugin 'rust-lang/rust.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'tommcdo/vim-exchange'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/django.vim'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'airblade/vim-gitgutter'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'edkolev/tmuxline.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'klen/python-mode'
+Plug 'lepture/vim-jinja'
+Plug 'mattn/emmet-vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'mxw/vim-jsx'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
+Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'vim-scripts/django.vim'
 
-call vundle#end()
+call plug#end()
 
 " Settings
 
 syntax enable
 filetype plugin indent on
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
 
 " Numbers
 
@@ -47,13 +43,13 @@ set number
 set relativenumber
 set hlsearch
 
-" Plugin config
+" Plug config
 
 set tags=./tags;$HOME
 
 " - airline
 set t_Co=256
-let g:airline_theme='sol'
+let g:airline_theme='serene'
 let g:airline_right_sep=''
 let g:airline_left_sep=''
 set fillchars+=vert:\ 

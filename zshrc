@@ -57,7 +57,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export EDITOR=vim
+export EDITOR=nvim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -129,6 +129,7 @@ fi
 
 if [[ -d ~/.gem/ruby/2.2.0/bin ]]; then
     export PATH="$HOME/.gem/ruby/2.2.0/bin:$PATH"
+    export PATH="$HOME/.gem/ruby/2.3.0/bin:$PATH"
 fi
 
 # Optional ruby gem directory
