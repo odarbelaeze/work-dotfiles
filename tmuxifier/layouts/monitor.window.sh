@@ -12,15 +12,15 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
 fi
 
 # Split window into panes.
-run_cmd "ssh pcm@172.23.177.80"
+run_cmd "ssh pcm@192.168.47.10"
 run_cmd "htop"
 
 split_v 60
-run_cmd "ssh pcm@172.23.177.81"
+run_cmd "ssh pcm@192.168.47.4"
 run_cmd "htop"
 
 split_v 50
-run_cmd "ssh pcm@172.23.177.82"
+run_cmd "ssh pcm@192.168.47.6"
 run_cmd "htop"
 
 tmuxifier-tmux select-layout even-vertical

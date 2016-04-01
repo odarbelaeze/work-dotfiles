@@ -113,7 +113,7 @@ if [[ -d /opt/cuda/lib64 ]]; then
 fi
 
 # 256 color support
-export TERM=xterm-256color
+# export TERM=xterm-256color
 
 if [[ -d ~/Projects/dircolors-solarized ]]; then
     eval `dircolors ~/Projects/dircolors-solarized/dircolors.ansi-universal`
@@ -129,6 +129,9 @@ fi
 
 if [[ -d ~/.gem/ruby/2.2.0/bin ]]; then
     export PATH="$HOME/.gem/ruby/2.2.0/bin:$PATH"
+fi
+
+if [[ -d ~/.gem/ruby/2.3.0/bin ]]; then
     export PATH="$HOME/.gem/ruby/2.3.0/bin:$PATH"
 fi
 

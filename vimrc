@@ -10,6 +10,7 @@ endif
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'christoomey/vim-sort-motion'
+Plug 'davidhalter/jedi-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'kana/vim-textobj-entire'
@@ -66,6 +67,7 @@ let g:tmuxline_powerline_separators = 0
 
 " - python-mode
 set completeopt=menu
+let g:pymode_rope=0
 
 " - syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -104,6 +106,8 @@ nnoremap <leader>ft :! python -m behave <CR>
 
 nnoremap <leader>ev :e ~/.vimrc <CR>
 nnoremap <leader>sv :so ~/.vimrc <CR>
+
+nnoremap <leader>sp vip:sort<CR>
 
 " Ember specific mappings
 cnoreabbrev eg !ember g
