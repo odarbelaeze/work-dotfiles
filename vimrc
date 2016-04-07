@@ -23,6 +23,7 @@ Plug 'lepture/vim-jinja'
 Plug 'mattn/emmet-vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
+Plug 'othree/yajs.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'tommcdo/vim-exchange'
@@ -108,6 +109,12 @@ nnoremap <leader>ev :e ~/.vimrc <CR>
 nnoremap <leader>sv :so ~/.vimrc <CR>
 
 nnoremap <leader>sp vip:sort<CR>
+
+" Breaking habbits
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " Ember specific mappings
 cnoreabbrev eg !ember g
