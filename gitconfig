@@ -3,3 +3,7 @@
 	name = Oscar David Arbeláez
 [push]
 	default = simple
+[credential]
+	helper = osxkeychain
+[core]
+	excludesfile = /Users/oscar/.gitignore_global

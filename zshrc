@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="honukai"
+ZSH_THEME="avit"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -57,7 +57,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export EDITOR=nvim
+export EDITOR=vim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -74,8 +74,7 @@ export EDITOR=nvim
 
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias nv="nvim"
-alias vim="nvim"
+alias nv="vim"
 
 # TTY
 
@@ -96,7 +95,7 @@ fi
 
 # Virtual env config
 
-export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python"
+export VIRTUALENVWRAPPER_PYTHON="/Users/oscar/.pyenv/shims/python"
 
 if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
     source /usr/bin/virtualenvwrapper.sh
@@ -111,6 +110,12 @@ fi
 if [[ -d /opt/cuda/lib64 ]]; then
     export LD_LIBARY_PATH="/opt/cuda/lib64:$LD_LIBARY_PATH"
 fi
+
+if [[ -d /Developer/NVIDIA/CUDA-7.5 ]]; then
+    export PATH="/Developer/NVIDIA/CUDA-7.5/bin":$PATH
+    export LD_LIBARY_PATH="/Developer/NVIDIA/CUDA-7.5/lib:$LD_LIBARY_PATH"
+fi
+
 
 # 256 color support
 # export TERM=xterm-256color
@@ -140,3 +145,26 @@ fi
 if [[ -d ~/.cargo/bin ]]; then
     export PATH="$HOME/.cargo/bin:$PATH"
 fi
+
+# Bash profile for those macs
+
+if [[ -f $HOME/.bash_profile ]]; then
+    source $HOME/.bash_profile
+fi
+
+if [[ -d ~/bin ]]; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
+mir () {
+    NUMBER=$1
+    shift
+    gco -b MIR-$NUMBER-`echo $* | tr " " - | tr "/" - | tr "&" and`;
+}
+
+ad () {
+    NUMBER=$1
+    shift
+    gco -b AD-$NUMBER-`echo $* | tr " " - | tr "/" - | tr "&" and`;
+}
+
