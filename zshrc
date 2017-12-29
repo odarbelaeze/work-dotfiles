@@ -5,7 +5,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="avit"
+# ZSH_THEME="gnzh"
+ZSH_THEME="amuse"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -85,6 +86,8 @@ alias nv="vim"
 if [[ -d .tmuxifier ]]; then
     export PATH="$HOME/.tmuxifier/bin:$PATH"
     export TMUXIFIER_LAYOUT_PATH="$HOME/.tmuxifier-layouts"
+    # Strange thing
+    # export TMUXIFIER_TMUX_ITERM_ATTACH="-CC"
     eval "$(tmuxifier init -)"
 fi
 
@@ -168,3 +171,8 @@ ad () {
     gco -b AD-$NUMBER-`echo $* | tr " " - | tr "/" - | tr "&" and`;
 }
 
+export LC_ALL=en_US.UTF-8
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
