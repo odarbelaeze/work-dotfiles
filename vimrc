@@ -42,8 +42,7 @@ call plug#end()
 
 syntax enable
 filetype plugin indent on
-" set background=light
-colorscheme CodeFactoryv3
+colorscheme badwolf
 set nowrap
 " set noswapfile " Cuz YOLO
 

@@ -1,15 +1,18 @@
 # Set window root path. Default is `$session_root`.
 # Must be called before `new_window`.
-#window_root "~/Projects/adroll-servers"
+window_root "~/Code/adroll/gatekeeper"
 
 # Create new window. If no argument is given, window name will be based on
 # layout file name.
-new_window "adroll-servers"
+new_window "gatekeeper"
 
 split_h 50
-run_cmd "paster serve --reload development.ini" 0
 
-select_pane 1
+run_cmd "docker-compose up --build" 0
+
+# Split window into panes.
+#split_v 20
+
 
 # Run commands.
 #run_cmd "top"     # runs in active pane

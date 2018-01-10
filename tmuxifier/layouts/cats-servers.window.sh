@@ -8,18 +8,15 @@ new_window "cats-servers"
 
 # Split window into panes.
 split_h 50
-split_v 50
 split_v 50 0
 
-run_cmd "source ./env dev && nvm use && export PYTHONPATH=./srv:$PYTHONPATH && export CONTAINER_HOST=10.62.88.5" 0
-run_cmd "source ./env dev && nvm use && export PYTHONPATH=./srv:$PYTHONPATH && export CONTAINER_HOST=10.62.88.5" 1
-run_cmd "source ./env dev && nvm use && export PYTHONPATH=./srv:$PYTHONPATH && export CONTAINER_HOST=10.62.88.5" 2
-run_cmd "source ./env dev && nvm use && export PYTHONPATH=./srv:$PYTHONPATH && export CONTAINER_HOST=10.62.88.5" 3
+run_cmd "source ./env dev && nvm use && export PYTHONPATH=./srv:$PYTHONPATH && export CONTAINER_HOST=172.16.123.69" 0
+run_cmd "source ./env dev && nvm use && export PYTHONPATH=./srv:$PYTHONPATH && export CONTAINER_HOST=173.16.123.69" 1
+run_cmd "source ./env dev && nvm use && export PYTHONPATH=./srv:$PYTHONPATH && export CONTAINER_HOST=173.16.123.69" 2
 
 run_cmd "sleep 2 && python srv/app.py" 0
 run_cmd "pushd www && npm run build -- dev && popd" 1
 run_cmd "sleep 2 && pushd srv && rqworker --worker-class='syncer.sentry.SentryAttachedWorker' && popd" 2
-run_cmd "while true; do hologram use engineer; echo 'Hologramer: Will engineer you again in a few momments'; sleep 600; done" 3
 
 # Run commands.
 #run_cmd "top"     # runs in active pane

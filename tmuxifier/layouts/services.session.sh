@@ -1,18 +1,18 @@
 # Set a custom session root path. Default is `$HOME`.
 # Must be called before `initialize_session`.
-session_root "~/Code/adroll/cats4gold"
+session_root "~/Code/adroll/services"
 
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
-if initialize_session "cats"; then
+if initialize_session "services"; then
 
   # Create a new window inline within session layout definition.
-  load_window "cats-servers"
-  load_window "editor"
-  load_window "console"
+  #new_window "misc"
 
   # Load a defined window layout.
-  #load_window "example"
+  load_window "adroll-services"
+  load_window "gatekeeper"
+  load_window "console"
 
   # Select the default active window on session creation.
   #select_window 1
