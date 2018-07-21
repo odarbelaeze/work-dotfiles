@@ -42,7 +42,9 @@ call plug#end()
 
 syntax enable
 filetype plugin indent on
-colorscheme badwolf
+" colorscheme badwolf
+" colorscheme soda
+" colorscheme tango-morning
 set nowrap
 " set noswapfile " Cuz YOLO
 

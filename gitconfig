@@ -6,4 +6,8 @@
 [credential]
 	helper = osxkeychain
 [core]
-	excludesfile = /Users/oscar/.gitignore_global
+	excludesfile = /Users/oscararbelaez/.gitignore_global
+	comenthar = %
+	commentChar = %
+[hub]
+	protocol = https

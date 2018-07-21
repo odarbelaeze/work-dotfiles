@@ -10,13 +10,13 @@ new_window "cats-servers"
 split_h 50
 split_v 50 0
 
-run_cmd "source ./env dev && nvm use && export PYTHONPATH=./srv:$PYTHONPATH && export CONTAINER_HOST=172.16.123.69" 0
-run_cmd "source ./env dev && nvm use && export PYTHONPATH=./srv:$PYTHONPATH && export CONTAINER_HOST=173.16.123.69" 1
-run_cmd "source ./env dev && nvm use && export PYTHONPATH=./srv:$PYTHONPATH && export CONTAINER_HOST=173.16.123.69" 2
+run_cmd "source ./env dev && nvm use && export CONTAINER_HOST=172.16.123.69" 0
+run_cmd "source ./env dev && nvm use && export CONTAINER_HOST=173.16.123.69" 1
+run_cmd "source ./env dev && nvm use && export CONTAINER_HOST=173.16.123.69" 2
 
-run_cmd "sleep 2 && python srv/app.py" 0
+run_cmd "sleep 2 && INTEGRATION=facebook python srv/cats4gold/app.py" 0
 run_cmd "pushd www && npm run build -- dev && popd" 1
-run_cmd "sleep 2 && pushd srv && rqworker --worker-class='syncer.sentry.SentryAttachedWorker' && popd" 2
+run_cmd "sleep 2 && pushd srv && rqworker --worker-class='cats4gold.syncer.sentry.SentryAttachedWorker' && popd" 2
 
 # Run commands.
 #run_cmd "top"     # runs in active pane
